@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: kata_07_reloj_checador_k7_n21_t3_development
+  database: (name_of_database)_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: kata_07_reloj_checador_k7_n21_t3_test
+  database: (name_of_database)_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: kata_07_reloj_checador_k7_n21_t3_production
-  username: kata_07_reloj_checador_k7_n21_t3
-  password: <%= ENV['KATA_07_RELOJ_CHECADOR_K7_N21_T3_DATABASE_PASSWORD'] %>
+  username: (Username)
+  password: (Password)
