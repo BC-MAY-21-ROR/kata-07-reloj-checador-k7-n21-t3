@@ -1,0 +1,24 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-padding-top: 0rem;
+  font-family: $font;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 2rem 0 0 0;
+  font-weight: 700;
+}
+
+button{
+  border-style: none;
+}
