@@ -1,0 +1,23 @@
+@import '../base/variables.css';
+
+
+.navbar {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: $heading_color;
+
+  #logo{
+    align-content: center;
+  }
+  .user_admin{
+    a{
+      color: $font_color;
+      text-decoration: none;
+    }
+  }
+}
+
+
