@@ -1,26 +1,24 @@
 @import 'variables.css';
 
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-  scroll-padding-top: 0rem;
-  font-family: $font;
   background-color: $background_color;
+  box-sizing: border-box;
+  font-family: $font;
+  font-size: 62.5%;
+  scroll-padding-top: 0rem;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
-body{
-  font-family: $font;
-}
+
+body{ font-family: $font; }
 
 h1, h2, h3 {
-  margin: 0;
   font-weight: 700;
+  margin: 0;
 }
 
-button{
-  border-style: none;
-}
+button{ border-style: none; }

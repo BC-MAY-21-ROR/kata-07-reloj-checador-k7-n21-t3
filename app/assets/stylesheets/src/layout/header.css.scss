@@ -3,21 +3,27 @@
 
 .navbar {
 
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   align-content: center;
   background-color: $heading_color;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
-  #logo{
-    align-content: center;
-  }
+  #logo { align-content: center; }
+
   .user_admin{
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    margin-right: 5rem;
+    
     a{
-      color: $font_color;
+      color: $secondary_color;
+      font-family: $font;
+      font-size: 2rem;
       text-decoration: none;
+      margin-left: 0.8rem;
     }
   }
 }
-
-
