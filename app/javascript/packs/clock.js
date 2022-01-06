@@ -21,11 +21,9 @@ function showTime() {
     sec = sec < 10 ? "0" + sec : sec;
 
     let currentTime = hour + ":" + min;
-    let meriedem = am_pm;
-    let seconds = sec;
 
     document.getElementById("hour").innerHTML = currentTime;
-    document.getElementById("meriedem").innerHTML = meriedem;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("meriedem").innerHTML = am_pm;
+    document.getElementById("seconds").innerHTML = sec;
 }
 showTime();
