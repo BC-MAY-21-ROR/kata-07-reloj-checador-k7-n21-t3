@@ -1,0 +1,27 @@
+@import '../base/variables.css';
+
+.navbar {
+  align-content: center;
+  background-color: $heading_color;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  #logo { align-content: center; }
+
+  .user_admin{
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    margin-right: 5rem;
+    
+    a{
+      color: $secondary_color;
+      font-family: $font;
+      font-size: 2rem;
+      text-decoration: none;
+      margin-left: 0.8rem;
+    }
+  }
+}
