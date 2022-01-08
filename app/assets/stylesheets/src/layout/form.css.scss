@@ -1,7 +1,6 @@
 @import "../base/variables.css";
 
 .main {
-
   align-content: center;
   align-items: center;
   background-color: $background_color;
@@ -39,7 +38,6 @@
     }
 
     form {
-
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
