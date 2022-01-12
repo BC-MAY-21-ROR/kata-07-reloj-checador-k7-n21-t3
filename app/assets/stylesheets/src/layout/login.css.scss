@@ -1,0 +1,25 @@
+@import '../base/variables.css';
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width:45rem;
+}
+
+.form__input{
+  background-color: $background_color;
+  border: 0.1rem solid $secondary_color;
+  color: $font_color;
+  font-family: $font;
+  font-size: 2rem;
+  outline: none;
+  padding: 1rem;
+}
+
+.form__button{
+  box-shadow: 0px 2px 1px 0px $secondary_color;
+  text-align: center;
+}
+
+input::placeholder { color: $font_color; }
