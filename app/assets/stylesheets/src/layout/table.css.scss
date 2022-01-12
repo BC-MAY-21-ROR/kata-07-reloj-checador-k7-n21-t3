@@ -1,1 +1,25 @@
 @import '../base/variables.css';
+
+.table{
+  background-color: $background_table;
+  margin: 0rem 10rem;
+  text-align: center;
+  h1{
+    color: $font_color;
+    margin: 2rem 4rem;
+  }
+  .employe{
+      width: 100%;
+      
+  }
+
+  .addButton{
+    text-align: right;
+    input{
+      background-color: $table_cell;
+      padding: 0.5rem 6rem;
+      margin: 2rem 1rem;
+    }
+  }
+}
+
