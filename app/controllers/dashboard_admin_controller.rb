@@ -1,6 +1,6 @@
 class DashboardAdminController < ApplicationController
   
-  def admin
+  def dashboard_admin
   end
 
 end
