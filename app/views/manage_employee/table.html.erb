@@ -37,7 +37,7 @@
             <th class="employee__title">Edit</th>
             <th class="employee__title">Delete</th>
           </tr>
-          <tr> 
+          <tr>
             <th class="employee__data">1</th>
             <th class="employee__data">20151424</th>
             <th class="employee__data">Ediberto sanchez Villalobos</th>
@@ -64,23 +64,29 @@
                     <label class="form__label">Email</label>
                     <input class="form__input" type="text">
                     <div class="col">
-                      <label class="form__label">Position</label>
-                      <input class="form__input" type="text">
-                      <label class="form__label">Employee ID</label>
-                      <input class="form__input" type="text">
+                      <div class="row">
+                        <label class="form__label">Position</label>
+                        <input class="form__input" type="text">
+                      </div>
+                      <div class="row">
+                        <label class="form__label">Employee ID</label>
+                        <input class="form__input" type="text">
+                      </div>
                     </div>
-                    <label class="form__label">Company</label>
-                    <select class="form__select" name="company" id="company">
-                      <option selected>-- Choose company --</option>
-                      <option value="foo-corp">Foo Corp</option>
-                    </select>
                     <div class="col">
+                      <div class="row">
+                        <label class="form__label">Company</label>
+                        <select class="form__select" name="company" id="company">
+                          <option selected>-- Choose company --</option>
+                          <option value="foo-corp">Foo Corp</option>
+                        </select>
+                      </div>
                       <div class="row">
                         <label class="form__label">Private Number</label>
                         <input class="form__input" type="text">
                       </div>
-                      <input class="form__button" type="button" value="Save" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     </div>
+                    <input class="form__button" type="button" value="Save" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   </form>
                 </div>
               </div>
