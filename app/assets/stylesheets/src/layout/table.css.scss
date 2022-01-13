@@ -2,24 +2,101 @@
 
 .table{
   background-color: $background_table;
+  border: 0.1rem solid $secondary_color;
+  font-family: $font;
   margin: 0rem 10rem;
   text-align: center;
+
   h1{
     color: $font_color;
     margin: 2rem 4rem;
   }
-  .employe{
+  .employee{
+      text-align: left;
       width: 100%;
-      
+      .employee__title{
+        border: 0.5rem solid $background_table;
+      }
+      .employee__data{
+        background-color: $table_cell;
+        border: 0.5rem solid $background_table;
+        color:black;
+        font-size: 1.8rem;
+      }
+      button{
+        background-color: $table_cell;
+      }
   }
-
   .addButton{
     text-align: right;
-    input{
+    .button{
       background-color: $table_cell;
-      padding: 0.5rem 6rem;
       margin: 2rem 1rem;
+      padding: 0.5rem 6rem;
     }
   }
+}
+
+.modal-body{
+  font-family: $font;
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
+  .form{
+    display:grid;
+    gap:0rem;
+    grid-template-columns: 1fr;
+    .col{
+      align-items:flex-end;
+      display:grid;
+      gap:1rem;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .row{
+      display:flex;
+      flex-direction: column;
+      gap: 0rem;
+      margin-left: 0rem;
+      .form__input{
+        margin-left: 0.8rem
+      }
+    }
+  }
+}
+
+.form__label{
+  color: black;
+  padding: 1rem;
+}
+
+.form__input{
+  background-color: $background_table;
+  color: $font_color;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+.form__select{
+  background-color: $background_table;
+  color: $font_color;
+  margin-left: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.form__button{
+  background-color: $background_table;
+  box-shadow: 0px 2px 1px 0px $secondary_color;
+  color: $font_color;
+  font-size: 1.5rem;
+  height: 4rem;
+  margin-bottom: 0.1rem;
+  margin-left: 1rem;
+  margin: 0;
+  padding: 1rem;
 }
 

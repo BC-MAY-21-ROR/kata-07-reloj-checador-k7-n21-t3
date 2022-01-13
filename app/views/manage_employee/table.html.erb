@@ -18,7 +18,7 @@
             <path d="M16.0001 14.6667C18.9456 14.6667 21.3334 12.2789 21.3334 9.33333C21.3334 6.38781 18.9456 4 16.0001 4C13.0546 4 10.6667 6.38781 10.6667 9.33333C10.6667 12.2789 13.0546 14.6667 16.0001 14.6667Z" stroke="#00E8B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M8 28V25.3333C8 23.9188 8.5619 22.5623 9.5621 21.5621C10.5623 20.5619 11.9188 20 13.3333 20H18.6667C20.0812 20 21.4377 20.5619 22.4379 21.5621C23.4381 22.5623 24 23.9188 24 25.3333V28" stroke="#00E8B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <a href="">Admin</a>
+          <a href="">Name</a>
         </div>
       </div>
     </nav>
@@ -26,20 +26,69 @@
     <div class="main">
       <div class="table">
         <h1>Employees<h1>
-        <table class="employe">
+        <table class="employee">
           <tr>
-            <th>Employees#</th>
-            <th>Private#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Position</th>
-            <th>Company</th>
+            <th class="employee__title">Employees#</th>
+            <th class="employee__title">Private#</th>
+            <th class="employee__title">Name</th>
+            <th class="employee__title">Email</th>
+            <th class="employee__title">Position</th>
+            <th class="employee__title">Company</th>
+            <th class="employee__title">Edit</th>
+            <th class="employee__title">Delete</th>
+          </tr>
+          <tr> 
+            <th class="employee__data">1</th>
+            <th class="employee__data">20151424</th>
+            <th class="employee__data">Ediberto sanchez Villalobos</th>
+            <th class="employee__data">esanchez23@ucol.mx</th>
+            <th class="employee__data">Developer</th>
+            <th class="employee__data">Foo Corp</th>
+            <th class="employee__data"><button> <%= image_tag "edit.svg" =%></button> </th>
+            <th class="employee__data"><button><%= image_tag "disable.svg" =%></button></th>
           </tr>
         </table>
         <div class="addButton">
-          <input type="button" value="Add">
+          <input class="button" type="button" value="Add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="form">
+                    <label class="form__label">Name</label>
+                    <input class="form__input" type="text">
+                    <label class="form__label">Email</label>
+                    <input class="form__input" type="text">
+                    <div class="col">
+                      <label class="form__label">Position</label>
+                      <input class="form__input" type="text">
+                      <label class="form__label">Employee ID</label>
+                      <input class="form__input" type="text">
+                    </div>
+                    <label class="form__label">Company</label>
+                    <select class="form__select" name="company" id="company">
+                      <option selected>-- Choose company --</option>
+                      <option value="foo-corp">Foo Corp</option>
+                    </select>
+                    <div class="col">
+                      <div class="row">
+                        <label class="form__label">Private Number</label>
+                        <input class="form__input" type="text">
+                      </div>
+                      <input class="form__button" type="button" value="Save" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
   </body>
 </html>
