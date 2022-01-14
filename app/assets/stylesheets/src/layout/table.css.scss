@@ -18,11 +18,11 @@
         border: 0.5rem solid $background_table;
       }
       .employee__data{
-        text-align: center;
         background-color: $table_cell;
         border: 0.5rem solid $background_table;
         color:black;
         font-size: 1.8rem;
+        text-align: center;
       }
       button{
         background-color: $table_cell;
@@ -66,13 +66,13 @@
       text-align: center;
     }
     .form__button{
-      width: 15rem;
       background-color: $background_table;
       box-shadow: 0px 2px 1px 0px $secondary_color;
       color: $font_color;
       font-size: 1.5rem;
       margin: 3rem 0rem 1rem 30rem;
       padding: 1rem;
+      width: 15rem;
     }
     .col{
       align-items:flex-end;
