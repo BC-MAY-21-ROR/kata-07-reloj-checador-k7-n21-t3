@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1" id="logo">
+          <%= image_tag "foocorp.svg" %>
+        </span>
+
+        <div class="user_admin">
+          <%= image_tag "admin.svg" %>
+          <a href="">Name</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main">
+      <div class="table">
+        <h1>Employees<h1>
+        <table class="employee">
+          <tr>
+            <th class="employee__title">Employees#</th>
+            <th class="employee__title">Private#</th>
+            <th class="employee__title">Name</th>
+            <th class="employee__title">Email</th>
+            <th class="employee__title">Position</th>
+            <th class="employee__title">Company</th>
+            <th class="employee__title">Edit</th>
+            <th class="employee__title">Delete</th>
+          </tr>
+          <tr>
+            <th class="employee__data">1</th>
+            <th class="employee__data">20151424</th>
+            <th class="employee__data">Ediberto sanchez Villalobos</th>
+            <th class="employee__data">esanchez23@ucol.mx</th>
+            <th class="employee__data">Developer</th>
+            <th class="employee__data">Foo Corp</th>
+            <th class="employee__data"><button> <%= image_tag "edit.svg" %></button> </th>
+            <th class="employee__data"><button><%= image_tag "disable.svg" %></button></th>
+          </tr>
+        </table>
+        <div class="addButton">
+          <input class="button" type="button" value="Add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <!-- Modal -->
+          <%= render "shared/modal" %>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
