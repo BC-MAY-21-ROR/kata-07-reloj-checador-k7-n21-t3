@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'attendance/filter_day'
   get 'login/admin'
   root 'pages#home'
   get 'admin', to: 'dashboard_admin#dashboard_admin'
