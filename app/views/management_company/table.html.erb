@@ -1,0 +1,26 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="table">
+    <h1>Company Branches<h1>
+    <table class="employee">
+      <tr>
+        <th class="employee__title">Name</th>
+        <th class="employee__title">Address</th>
+        <th class="employee__title">Edit</th>
+        <th class="employee__title">Delete</th>
+      </tr>
+      <tr>
+        <th class="employee__data">Foo Corp 1</th>
+        <th class="employee__data">Fake Street #123 Colima Colima Mexico</th>
+        <th class="employee__data"><button> <%= image_tag "edit.svg" %></button> </th>
+        <th class="employee__data"><button><%= image_tag "disable.svg" %></button></th>
+      </tr>
+    </table>
+    <div class="addButton">
+      <input class="button" type="button" value="Add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <!-- Modal -->
+      <%= render "shared/modal_company" %>
+    </div>
+  </div>
+</div>
