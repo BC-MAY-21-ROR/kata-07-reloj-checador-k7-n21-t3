@@ -1,2 +1,64 @@
-<h1>Attendance#filter_day</h1>
-<p>Find me in app/views/attendance/filter-day.html.erb</p>
+<nav class="navbar">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1" id="logo">
+      <%= image_tag "foocorp.svg" %>
+    </span>
+
+    <div class="user_admin">
+      <%= image_tag "admin.svg" %>
+      <a href="">Name</a>
+    </div>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="table__filter">
+    <h1>Filter by day <input class="filter__input" type="date" value="MM/DD/YYYY"></h1>
+    <table class="filter">
+      <tr>
+        <th class="filter__title">Employee#</th>
+        <th class="filter__title">Name</th>
+        <th class="filter__title">Company</th>
+        <th class="filter__title">Date</th>
+        <th class="filter__title">Check-in</th>
+        <th class="filter__title">Check-out</th>
+      </tr>
+
+      <tr>
+        <th class="filter__data">1</th>
+        <th class="filter__data">Angel Isaac</th>
+        <th class="filter__data">Foo Corp</th>
+        <th class="filter__data">01/18/2022</th>
+        <th class="filter__data">8:00:00 am</th>
+        <th class="filter__data">3:00:00 pm</th>
+      </tr>
+
+      <tr>
+        <th class="filter__data">2</th>
+        <th class="filter__data">Mauricio Navarro</th>
+        <th class="filter__data">Foo Corp</th>
+        <th class="filter__data">01/18/2022</th>
+        <th class="filter__data">8:00:00 am</th>
+        <th class="filter__data">3:00:00 pm</th>
+      </tr>
+
+      <tr>
+        <th class="filter__data">3</th>
+        <th class="filter__data">Derek Ayala</th>
+        <th class="filter__data">Foo Corp</th>
+        <th class="filter__data">01/18/2022</th>
+        <th class="filter__data">8:00:00 am</th>
+        <th class="filter__data">3:00:00 pm</th>
+      </tr>
+
+      <tr>
+        <th class="filter__data">4</th>
+        <th class="filter__data">Ediberto Sanchez Villalobos</th>
+        <th class="filter__data">Foo Corp</th>
+        <th class="filter__data">01/18/2022</th>
+        <th class="filter__data">8:00:00 am</th>
+        <th class="filter__data">3:00:00 pm</th>
+      </tr>
+    </table>
+  </div>
+</div>
