@@ -1,3 +1,52 @@
-// Place all the styles related to the absence controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import '../base/variables.css';
+
+.absence-container {
+  background-color: $background_table;
+  color: $font_color;
+  padding: 2rem;
+  width: 75%;
+  
+  &, input { border: 1px solid $secondary_color; }
+
+  .search-filter {
+    display: flex;
+    justify-content:flex-start;
+    align-content: center;
+    align-items: center;
+
+    input {
+      margin-left: 20px;
+      color: $font_color;
+      text-align: center;
+      background-color: transparent;
+      font-size: 1.8rem;
+      outline: none;
+      background-color: #212121;
+    }
+
+  }
+
+  .absence-table {
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+
+      th, td {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+
+      td {
+        background-color: $table_cell;
+        color: #212121;
+        border: 1px solid #212121;
+        margin-bottom: 20px;
+      }
+
+    }
+
+  }
+
+}
