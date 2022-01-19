@@ -1,0 +1,28 @@
+@import '../base/variables.css';
+
+.table{
+  .table__container{
+    display: flex;
+    gap: 1.5rem;
+  }
+  .employee-time{
+    text-align: left;
+    width: 100%;
+    .employee__title{
+      border: 0.5rem solid $background_table;
+      font-size: 2rem;
+      color: $font_color;
+      padding-left: 1rem;
+    }
+    .employee--center{
+      text-align: center;
+    }
+    .employee__data{
+      background-color: $table_cell;
+      border: 0.5rem solid $background_table;
+      color:black;
+      font-size: 1.8rem;
+      padding: 1rem 0.5rem;
+    }
+  }
+}

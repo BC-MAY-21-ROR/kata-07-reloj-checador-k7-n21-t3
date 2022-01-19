@@ -1,0 +1,37 @@
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1" id="logo">
+      <%= image_tag "foocorp.svg" %>
+    </span>
+
+    <div class="user_admin">
+      <%= image_tag "admin.svg" %>
+      <a href="">Name</a>
+    </div>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="table">
+    <div class="table__container">
+      <h1>Filter by month:</h1>
+    </div>
+    <table class="employee-time">
+      <tr>
+        <th class="employee__title employee--center">Employees#</th>
+        <th class="employee__title">Name</th>
+        <th class="employee__title">Company</th>
+        <th class="employee__title">Average time</th>
+      </tr>
+      <tr>
+        <td class="employee__data employee--center">1</td>
+        <td class="employee__data">Ediberto sanchez Villalobos</td>
+        <td class="employee__data">Foo Corp</td>
+        <td class="employee__data">45.5</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'date' %>
