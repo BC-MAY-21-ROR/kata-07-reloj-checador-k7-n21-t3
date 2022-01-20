@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'avarage_time/month'
   get 'login/admin'
   root 'pages#home'
   get 'admin', to: 'dashboard_admin#dashboard_admin'
