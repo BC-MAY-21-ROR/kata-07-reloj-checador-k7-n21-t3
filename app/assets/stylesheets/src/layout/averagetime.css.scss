@@ -1,0 +1,45 @@
+@import '../base/variables.css';
+
+.table{
+  .table__container{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    h1{
+      margin: 0;
+      padding: 1rem;
+    }
+    .date{
+      background-color: $heading_color;
+      border: 0.1rem solid $table_cell;
+      color: $font_color;
+      font-size: 1.8rem;
+      padding: 0;
+      text-align: center;
+    }
+  }
+  .employee-time{
+    margin-bottom: 2rem;
+    margin-left: 1%;
+    margin-top: 2rem;
+    text-align: left;
+    width: 98%;
+    .employee__title{
+      border: 0.5rem solid $background_table;
+      color: $font_color;
+      font-size: 2rem;
+      font-weight: 400;
+      padding-left: 1rem;
+    }
+    .employee--center{
+      text-align: center;
+    }
+    .employee__data{
+      background-color: $table_cell;
+      border: 0.5rem solid $background_table;
+      color:black;
+      font-size: 1.8rem;
+      padding: 1rem;
+    }
+  }
+}
