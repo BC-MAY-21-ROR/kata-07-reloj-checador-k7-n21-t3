@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'attendance/filter_day'
   get 'avarage_time/month'
   get 'login/admin'
   root 'pages#home'
