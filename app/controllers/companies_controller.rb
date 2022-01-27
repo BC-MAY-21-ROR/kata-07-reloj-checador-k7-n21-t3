@@ -1,4 +1,4 @@
 class CompaniesController < ApplicationController
-  def table
+  def index
   end
 end
