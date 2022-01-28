@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get 'admin', to: 'dashboard_admin#dashboard_admin'
   get "/employees", to: "employees#index"
   get "absence", to: 'absence#absence'
-  resources :companies, only: [:edit, :update, :index, :destroy]
+  resources :companies, only: [:edit, :update, :index, :destroy, :new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
