@@ -10,14 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_234709) do
+ActiveRecord::Schema.define(version: 2022_01_28_012113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attendances", force: :cascade do |t|
+    t.bigint "employee_id"
+    t.date "attendance_date"
+    t.time "check_in"
+    t.time "check_out"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_attendances_on_employee_id"
+  end
+
   create_table "companies", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "address", null: false
+    t.boolean "disable", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "employees", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "position", null: false
+    t.integer "employee_num", null: false
+    t.integer "private_num", null: false
+    t.bigint "company_id", null: false
+    t.boolean "disable", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_employees_on_company_id"
+  end
+
+  add_foreign_key "attendances", "employees"
+  add_foreign_key "employees", "companies"
 end
