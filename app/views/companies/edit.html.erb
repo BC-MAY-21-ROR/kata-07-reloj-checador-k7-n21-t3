@@ -2,8 +2,8 @@
 
 <div class="main">
   <div class="resources">
-    <h2 class='title'>Create Company</h2>
-    <%= form_with scope: :company, url: companies_path, local:true, class:'form' do |f|%>
+    <h2 class='title'>Update Company</h2>
+    <%= form_with(model: @company, local:true, class:'form') do |f|%>
       <%= f.label :name ,class: 'form__label'%>
       <%= f.text_field :name, class: 'form__input' %>
       <%= f.label :address ,class: 'form__label'%>
@@ -14,7 +14,7 @@
       </div>
     <% end %>
     <% if @company.errors.any? %>
-      <h3 class="Error_title"> The following errors prevented the Company from being saved</h3>
+      <h3 class="Error_title"> The following errors prevented the Company from being updated</h3>
       <ul>
       <% @company.errors.full_messages.each do |msg|%>
         <li><span><%= msg %></span></li>
