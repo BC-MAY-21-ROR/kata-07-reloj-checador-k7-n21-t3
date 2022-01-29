@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   def index
-    @company = Company.all
+    @company = Company.where(disable: false)
   end
   def new
     @company = Company.new
@@ -26,5 +26,11 @@ class CompaniesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @company = Company.find(params[:id])
+    @company.update(disable: true)
+    redirect_to companies_path
   end
 end
