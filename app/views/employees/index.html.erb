@@ -37,7 +37,7 @@
           <td class="employee__data"><%= employee.position %></td>
           <td class="employee__data"><%= employee.company_id %></td>
           <td class="employee__data"><%= link_to edit_employee_path(employee)do %> <%= image_tag "edit.svg" %> <% end %> </td>
-          <td class="employee__data"><button><%= image_tag "disable.svg" %></button></td>
+          <td class="employee__data"><%= link_to employee_path(employee) , method: :delete ,data: {confirm: "Are you sure ?"} do%> <%= image_tag "disable.svg" %> <% end %> </td>
         </tr>
       <% end %>
     </tbody>
