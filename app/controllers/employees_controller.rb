@@ -24,7 +24,7 @@ class EmployeesController < ApplicationController
   def update
     @employee = Employee.find(params[:id])
     if @employee.update(params.require(:employee).permit(:name, :email, :position, :employee_num, :private_num, :company_id))
-      redirect_to companies_path
+      redirect_to employees_path
     else
       render 'edit'
     end
@@ -33,6 +33,6 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.update(disable: true)
-    redirect_to companies_path
+    redirect_to employees_path
   end
 end
