@@ -3,14 +3,12 @@
     <span class="navbar-brand mb-0 h1" id="logo">
         <%= image_tag "foocorp.svg" %>
     </span>
-
     <div class="user_admin">
       <%= image_tag "admin.svg" %>
       <a href="">Admin</a>
     </div>
   </div>
 </nav>
-
 <div class="main">
   <div class="cont">
     <div class="clock">
@@ -20,17 +18,15 @@
         <h5 id="seconds"></h5>
       </div>
     </div>
-    <form action="">
-      <select name="company" id="company">
-        <option selected>-- Choose company --</option>
-        <option value="foo-corp">Foo Corp</option>
-      </select>
-      <input type="text" placeholder="private code">
+    <%= form_with(model: @attendance, method: :get)  do |form| %>
+      <% companies_array = Company.all.map { |c| c.name}%>
+      <%= select_tag(:company, options_for_select(companies_array)) %>
+      <%=form.text_field :private_num, placeholder:"private number"%>
       <div>
-        <input type="button" value="Check In">
-        <input type="button" value="Check Out">
+        <%=form.submit "Check In"%>
+        <%=form.submit "Check Out"%>
       </div>
-    </form>
+    <% end %>
   </div>
 </div>
 
