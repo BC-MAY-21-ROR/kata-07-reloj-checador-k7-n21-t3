@@ -21,7 +21,7 @@
       <div class="col">
         <div class="row">
           <%= f.label :company_id ,class: 'form__label'%>
-          <%= f.select :company_id , @company.map {|t| [t.name, t.id]}, {}, class:'form__select'%>
+          <%= f.select :company_id , @company.map {|t| [t.id]}, {}, class:'form__select'%>
         </div>
         <div class="row">
           <%= f.label :private_num ,class: 'form__label'%>
@@ -32,6 +32,14 @@
         <%= link_to '<input class="form__button" type="button" value="Back">'.html_safe, employees_path %>
         <%= f.submit class: 'form__button' %>
       </div>
+    <% end %>
+    <% if @employee.errors.any? %>
+      <h3 class="Error_title"> The following errors prevented the Employee from being saved</h3>
+      <ul>
+      <% @employee.errors.full_messages.each do |msg|%>
+        <li><span><%= msg %></span></li>
+      <% end %>
+      </ul>
     <% end %>
   </div>
 </div>
