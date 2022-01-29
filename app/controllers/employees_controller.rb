@@ -5,6 +5,7 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
+    @company = Company.where(disable: false)
   end
 
   def create
