@@ -1,6 +1,12 @@
 class EmployeesController < ApplicationController
   def index
     @employee = Employee.where(disable: false)
+    @company = Company.where(disable: true)
+    @employee.each do |employee|
+      @company.each do |company|
+        employee.update(disable: true) if employee.company_id == company.id
+      end
+    end
   end
 
   def new
