@@ -14,12 +14,12 @@
       </thead>
       <tbody>
         <% @company.each do |company| %>
-        <tr>
-          <td class="employee__data"><%= company.name %></td>
-          <td class="employee__data"><%= company.address %></td>
-          <td class="employee__data"><button> <%= image_tag "edit.svg" %></button> </td>
-          <td class="employee__data"><button><%= image_tag "disable.svg" %></button></td>
-        </tr>
+          <tr>
+            <td class="employee__data"><%= company.name %></td>
+            <td class="employee__data"><%= company.address %></td>
+            <td class="employee__data"><%= link_to edit_company_path(company) do%> <%= image_tag "edit.svg" %> <% end %> </td>
+            <td class="employee__data"><button><%= image_tag "disable.svg" %></button></td>
+          </tr>
         <% end %>
       </tbody>
     </table>

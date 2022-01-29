@@ -14,4 +14,17 @@ class CompaniesController < ApplicationController
       render 'new'
     end
   end
+
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  def update
+    @company = Company.find(params[:id])
+    if @company.update(params.require(:company).permit(:name, :address))
+      redirect_to companies_path
+    else
+      render 'edit'
+    end
+  end
 end
