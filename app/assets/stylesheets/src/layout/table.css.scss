@@ -38,18 +38,41 @@
   }
 }
 
-.modal-body{
+.resources{
   font-family: $font;
   font-size: 2rem;
   text-align: left;
-  width: 100%;
+  background-color: $background_table;
+  border: 0.1rem solid $secondary_color;
+  padding: 1rem;
+  width: 50rem;
+  .Error_title{
+    color: $font_color;
+    margin-top: 1rem;
+  }
+  ul{
+    list-style: none;
+  }
+  ul li::before {
+    content: "\2022";
+    color: $secondary_color;
+    margin-left: -1rem;
+  }
+  li{
+    color: $font_color;
+    span{
+      padding-left: 1rem;
+    }
+  }
   .form{
+    width: 100%;
     display:grid;
-    gap:0rem;
+    gap:1rem;
     grid-template-columns: 1fr;
     .form__label{
-      color: black;
+      color: $font_color;
       padding: 1rem;
+      width: 100%;
     }
     .form__input{
       background-color: $background_table;
@@ -58,6 +81,11 @@
       margin-left: 1rem;
       margin: 0;
       padding: 1rem;
+    }
+    .field_with_errors{
+      .form__input{
+        width: 100%;
+      }
     }
     .form__select{
       background-color: $background_table;
@@ -70,12 +98,11 @@
       box-shadow: 0px 2px 1px 0px $secondary_color;
       color: $font_color;
       font-size: 1.5rem;
-      margin: 3rem 0rem 1rem 30rem;
       padding: 1rem;
-      width: 15rem;
+      border: 0.1rem solid $secondary_color;
+      width: 100%;
     }
     .col{
-      align-items:flex-end;
       display:grid;
       gap:1rem;
       grid-template-columns: 1fr 1fr;
@@ -93,6 +120,3 @@
     }
   }
 }
-
-
-

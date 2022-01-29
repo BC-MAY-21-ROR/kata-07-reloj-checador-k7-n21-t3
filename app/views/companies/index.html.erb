@@ -24,9 +24,7 @@
       </tbody>
     </table>
     <div class="addButton">
-      <input class="button" type="button" value="Add" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <!-- Modal -->
-      <%= render "new" %>
+      <%= link_to '<input class="button" type="button" value="Add">'.html_safe, new_company_path %>
     </div>
   </div>
 </div>
