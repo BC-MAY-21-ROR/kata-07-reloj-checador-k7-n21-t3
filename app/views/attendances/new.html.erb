@@ -18,13 +18,11 @@
         <h5 id="seconds"></h5>
       </div>
     </div>
-    <%= form_with(model: @attendance, method: :get)  do |form| %>
-      <% companies_array = Company.all.map { |c| c.name}%>
-      <%= select_tag(:company, options_for_select(companies_array)) %>
-      <%=form.text_field :private_num, placeholder:"private number"%>
+    <%= form_with scope: :attendance, url: attendances_path, local:true do |form|%>
+      <%= form.collection_select :company_id, Company.where(disable: false), :id, :name , {}%>
+      <%=form.number_field :private_num, placeholder:"private number"%>
       <div>
-        <%=form.submit "Check In"%>
-        <%=form.submit "Check Out"%>
+        <%=form.submit "Check In/Out"%>
       </div>
     <% end %>
   </div>
