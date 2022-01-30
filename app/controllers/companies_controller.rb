@@ -2,6 +2,7 @@ class CompaniesController < ApplicationController
   def index
     @company = Company.where(disable: false)
   end
+
   def new
     @company = Company.new
   end
