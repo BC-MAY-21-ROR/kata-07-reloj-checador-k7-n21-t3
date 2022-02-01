@@ -11,12 +11,15 @@
     color: $font_color;
     margin: 2rem 4rem;
   }
+
   .employee{
       text-align: left;
       width: 100%;
+
       .employee__title{
         border: 0.5rem solid $background_table;
       }
+
       .employee__data{
         background-color: $table_cell;
         border: 0.5rem solid $background_table;
@@ -24,12 +27,15 @@
         font-size: 1.8rem;
         text-align: center;
       }
+
       button{
         background-color: $table_cell;
       }
   }
+
   .addButton{
     text-align: right;
+
     .button{
       background-color: $table_cell;
       margin: 2rem 1rem;
@@ -38,20 +44,55 @@
   }
 }
 
-.modal-body{
+.resources{
+  background-color: $background_table;
+  border: 0.1rem solid $secondary_color;
   font-family: $font;
   font-size: 2rem;
+  padding: 1rem;
   text-align: left;
-  width: 100%;
+  width: 50rem;
+
+  .Error_title{
+    color: $font_color;
+    margin-top: 1rem;
+  }
+
+  .title{
+    color: $font_color;
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: $secondary_color;
+    margin-left: -1rem;
+  }
+
+  li{
+    color: $font_color;
+
+    span{
+      padding-left: 1rem;
+    }
+  }
+
   .form{
     display:grid;
-    gap:0rem;
+    gap:1rem;
     grid-template-columns: 1fr;
-    .form__label{
-      color: black;
+    width: 100%;
+
+    &__label{
+      color: $font_color;
       padding: 1rem;
+      width: 100%;
     }
-    .form__input{
+
+    &__input{
       background-color: $background_table;
       color: $font_color;
       font-size: 1.5rem;
@@ -59,40 +100,48 @@
       margin: 0;
       padding: 1rem;
     }
-    .form__select{
+
+    .field_with_errors{
+
+      .form__input{
+        width: 100%;
+      }
+    }
+
+    &__select{
       background-color: $background_table;
       color: $font_color;
       padding: .6rem;
       text-align: center;
     }
-    .form__button{
+
+    &__button{
       background-color: $background_table;
+      border: 0.1rem solid $secondary_color;
       box-shadow: 0px 2px 1px 0px $secondary_color;
       color: $font_color;
       font-size: 1.5rem;
-      margin: 3rem 0rem 1rem 30rem;
       padding: 1rem;
-      width: 15rem;
+      width: 100%;
     }
+
     .col{
-      align-items:flex-end;
       display:grid;
       gap:1rem;
       grid-template-columns: 1fr 1fr;
       justify-content: center;
       margin-top: 1rem;
     }
+
     .row{
       display:flex;
       flex-direction: column;
       gap: 0rem;
       margin-left: 0rem;
+
       .form__input{
         margin-left: 0rem
       }
     }
   }
 }
-
-
-

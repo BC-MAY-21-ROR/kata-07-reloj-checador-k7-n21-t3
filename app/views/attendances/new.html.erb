@@ -9,7 +9,14 @@
     </div>
   </div>
 </nav>
+
+
 <div class="main">
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%=name%>" role="alert">
+        <%= msg %>
+      </div>
+    <% end %>
   <div class="cont">
     <div class="clock">
       <h1 id="hour"></h1>
@@ -18,6 +25,7 @@
         <h5 id="seconds"></h5>
       </div>
     </div>
+
     <%= form_with scope: :attendance, url: attendances_path, local:true do |form|%>
       <%= form.collection_select :company_id, Company.where(disable: false), :id, :name , {}%>
       <%=form.number_field :private_num, placeholder:"private number"%>

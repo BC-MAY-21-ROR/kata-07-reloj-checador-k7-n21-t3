@@ -4,23 +4,27 @@
   <div class="table">
     <h1>Company Branches<h1>
     <table class="employee">
-      <tr>
-        <th class="employee__title">Name</th>
-        <th class="employee__title">Address</th>
-        <th class="employee__title">Edit</th>
-        <th class="employee__title">Delete</th>
-      </tr>
-      <tr>
-        <th class="employee__data">Foo Corp 1</th>
-        <th class="employee__data">Fake Street #123 Colima Colima Mexico</th>
-        <th class="employee__data"><button> <%= image_tag "edit.svg" %></button> </th>
-        <th class="employee__data"><button><%= image_tag "disable.svg" %></button></th>
-      </tr>
+      <thead>
+        <tr>
+          <th class="employee__title">Name</th>
+          <th class="employee__title">Address</th>
+          <th class="employee__title">Edit</th>
+          <th class="employee__title">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @company.each do |company| %>
+          <tr>
+            <td class="employee__data"><%= company.name %></td>
+            <td class="employee__data"><%= company.address %></td>
+            <td class="employee__data"><%= link_to edit_company_path(company) do%> <%= image_tag "edit.svg" %> <% end %> </td>
+            <td class="employee__data"><%= link_to company_path(company) , method: :delete ,data: {confirm: "Are you sure ?"} do%> <%= image_tag "disable.svg" %> <% end %> </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
     <div class="addButton">
-      <input class="button" type="button" value="Add" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <!-- Modal -->
-      <%= render "new" %>
+      <%= link_to '<input class="button" type="button" value="Add">'.html_safe, new_company_path %>
     </div>
   </div>
 </div>

@@ -23,7 +23,7 @@ class AttendancesController < ApplicationController
         data[:check_in]=time
         data.delete(:company_id)
         if Attendance.new(data).save
-          redirect_to root_path
+          redirect_to root_path, info: "Invalid email"
         else
           redirect_to root_path
         end

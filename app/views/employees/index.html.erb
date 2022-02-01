@@ -15,9 +15,10 @@
   <div class="table">
     <h1>Employees<h1>
     <table class="employee">
+    <thead>
       <tr>
         <th class="employee__title">Employees#</th>
-        <th class="employee__title">Private#</th>
+        <th class="employee__title">Private#</th>``
         <th class="employee__title">Name</th>
         <th class="employee__title">Email</th>
         <th class="employee__title">Position</th>
@@ -25,22 +26,24 @@
         <th class="employee__title">Edit</th>
         <th class="employee__title">Delete</th>
       </tr>
-      <tr>
-        <th class="employee__data">1</th>
-        <th class="employee__data">20151424</th>
-        <th class="employee__data">Ediberto sanchez Villalobos</th>
-        <th class="employee__data">esanchez23@ucol.mx</th>
-        <th class="employee__data">Developer</th>
-        <th class="employee__data">Foo Corp</th>
-        <th class="employee__data"><button> <%= image_tag "edit.svg" %></button> </th>
-        <th class="employee__data"><button><%= image_tag "disable.svg" %></button></th>
-      </tr>
+    </thead>
+    <tbody>
+      <% @employee.each do |employee| %>
+        <tr>
+          <td class="employee__data"><%= employee.employee_num %></td>
+          <td class="employee__data"><%= employee.private_num %></td>
+          <td class="employee__data"><%= employee.name %></td>
+          <td class="employee__data"><%= employee.email %></td>
+          <td class="employee__data"><%= employee.position %></td>
+          <td class="employee__data"><%= employee.company_id %></td>
+          <td class="employee__data"><%= link_to edit_employee_path(employee)do %> <%= image_tag "edit.svg" %> <% end %> </td>
+          <td class="employee__data"><%= link_to employee_path(employee) , method: :delete ,data: {confirm: "Are you sure ?"} do%> <%= image_tag "disable.svg" %> <% end %> </td>
+        </tr>
+      <% end %>
+    </tbody>
     </table>
     <div class="addButton">
-      <input class="button" type="button" value="Add" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <!-- Modal -->
-      <%= render "new" %>
-
+      <%= link_to '<input class="button" type="button" value="Add">'.html_safe, new_employee_path %>
     </div>
   </div>
 </div>
