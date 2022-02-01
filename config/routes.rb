@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'attendances/index'
   get 'avarage_time/month'
   get 'login/admin'
