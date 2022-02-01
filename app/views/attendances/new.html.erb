@@ -12,11 +12,7 @@
 
 
 <div class="main">
-    <% flash.each do |name, msg| %>
-      <div class="alert alert-<%=name%>" role="alert">
-        <%= msg %>
-      </div>
-    <% end %>
+  <%= render "shared/alerts"%>
   <div class="cont">
     <div class="clock">
       <h1 id="hour"></h1>
