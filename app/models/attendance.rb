@@ -1,4 +1,3 @@
 class Attendance < ApplicationRecord
-  belongs_to :employee , foreign_key: 'private_num'
-  validates :attendance_date, presence: true
+  belongs_to :employee, foreign_key: :private_num, primary_key: :private_num
 end
