@@ -1,4 +1,4 @@
-class RemoveColumn < ActiveRecord::Migration[6.1]
+class ChangeForeignKey < ActiveRecord::Migration[6.1]
   def change
     remove_column :attendances, :employee_id
     add_column :attendances, :private_num, :integer
