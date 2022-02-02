@@ -4,7 +4,7 @@
   <div class="absence-container">
     <form class='date' action='absence'>
       <h1>Filter by month</h1>
-      <input class="filter__input" type="month" value="MM/YYYY" name='date'>
+      <input class="filter__input" type="month" value="02/2022" name='date'>
       <input class="filter__button" type="submit" value="find">
     </form>
     <div class="absence-table">
@@ -24,7 +24,7 @@
             <td class="filter__data"><%= employee.name%></td>
             <% company = Company.find_by(id: employee.company_id)%>
             <td class="filter__data"><%= company.name%></td>
-            <td class="filter__data"><% cal_absence(employee)%></td>
+            <td class="filter__data"><%= cal_absence(employee)%></td>
           </tr>
         <% end %>
       </tbody>

@@ -21,14 +21,18 @@
       <tbody>
         <% @attendance.each do |attendance| %>
           <tr>
-            <% employee = Employee.find_by(id: attendance.employee_id)%>
+            <% employee = Employee.find_by(private_num: attendance.private_num)%>
             <td class="filter__data"><%= employee.private_num%></td>
             <td class="filter__data"><%= employee.name%></td>
             <% company = Company.find_by(id: employee.company_id)%>
             <td class="filter__data"><%= company.name%></td>
             <td class="filter__data"><%= attendance.attendance_date %></td>
             <td class="filter__data"><%= attendance.check_in.strftime("%H:%M:%S") %></td>
-            <td class="filter__data"><%= attendance.check_out.strftime("%H:%M:%S") %></td>
+            <% if attendance.check_out != nil %>
+              <td class="filter__data"><%= attendance.check_out.strftime("%H:%M:%S") %></td>
+            <% else %>
+              <td class="filter__data">No check out</td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
