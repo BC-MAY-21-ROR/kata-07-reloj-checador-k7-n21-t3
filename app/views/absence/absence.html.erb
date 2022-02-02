@@ -2,42 +2,32 @@
 
 <div class="main">
   <div class="absence-container">
-    <div class="search-filter">
-      <h2>Filter by month: </h2>
-      <input type="month" min="2018-01" max="2025-12" value="2022-01">
-    </div>
+    <form class='date' action='absence'>
+      <h1>Filter by month</h1>
+      <input class="filter__input" type="month" value="MM/YYYY" name='date'>
+      <input class="filter__button" type="submit" value="find">
+    </form>
     <div class="absence-table">
       <table>
+        <thead>
         <tr>
-          <th>Employee #</th>
-          <th>Name</th>
-          <th>Company</th>
-          <th>Absences</th>
+          <th class="filter__title">Private Number</th>
+          <th class="filter__title">Name</th>
+          <th class="filter__title">Company</th>
+          <th class="filter__title">Absences</th>
         </tr>
-        <tr>
-          <td>12345</td>
-          <td>Mauricio Navarro Cortes</td>
-          <td>foocorp</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td>54321</td>
-          <td>Derek Ayala</td>
-          <td>foocorp</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>34512</td>
-          <td>Angel Isaac</td>
-          <td>foocorp</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>15243</td>
-          <td>Ediberto</td>
-          <td>foocorp</td>
-          <td>3</td>
-        </tr>
+      </thead>
+      <tbody>
+        <% @employee.each do |employee| %>
+          <tr>
+            <td class="filter__data"><%= employee.private_num%></td>
+            <td class="filter__data"><%= employee.name%></td>
+            <% company = Company.find_by(id: employee.company_id)%>
+            <td class="filter__data"><%= company.name%></td>
+            <td class="filter__data"><% cal_absence(employee)%></td>
+          </tr>
+        <% end %>
+      </tbody>
       </table>
     </div>
   </div>
