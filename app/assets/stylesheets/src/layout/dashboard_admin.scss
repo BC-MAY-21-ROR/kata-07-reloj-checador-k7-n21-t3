@@ -21,7 +21,7 @@
   justify-content: center;
   width: 27%;
 
-  input {
+  input , a input{
     background-color: transparent;
     border-radius: 3px;
     border: 1px solid $secondary_color;
@@ -31,6 +31,7 @@
     outline: none;
     padding: 8px 0px;
     transition: 0.3s all;
+    width: 100%;
 
     &:hover {
       transform: translateY(-5px);

@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_scope :user do
+    get 'users/login'   => 'devise/sessions#new'
+    get 'users/logout'  => 'devise/sessions#destroy'
+    get '/user' => "devise/sessions#dashboard", :as => :user_root
+  end
+
   get 'attendances/index'
   get 'avarage_time/month'
-  get 'login/admin'
   root 'pages#home'
-  get 'admin', to: 'dashboard_admin#dashboard_admin'
   resources :employees, only: [:edit, :update, :index, :destroy, :new, :create]
   get "absence", to: 'absence#absence'
   resources :companies, only: [:edit, :update, :index, :destroy, :new, :create]
