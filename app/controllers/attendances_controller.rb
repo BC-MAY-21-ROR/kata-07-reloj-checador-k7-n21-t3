@@ -12,7 +12,7 @@ class AttendancesController < ApplicationController
     data = params.require(:attendance).permit(:private_num, :company_id)
     data[:check_in] = Time.now.strftime("%H:%M:%S")
     data[:attendance_date] = Time.now.strftime("%d-%m-%Y")
-    emp = @employee.find_by(private_num: data.fetch(:private_num), company_id: data.fetch(:company_id))
+    emp = Employee.enabled.find_by(data.slice(:private_num, :company_id))
     if !emp.nil?
       update_check(data)
     else
