@@ -2,52 +2,36 @@
 
 <div class="main">
   <div class="table__filter">
-    <h1>Filter by day <input class="filter__input" type="date" value="MM/DD/YYYY"></h1>
+    <form class='date' action='index'>
+      <h1>Filter by day</h1>
+      <input class="filter__input" type="date" value="MM/DD/YYYY" name='date'>
+      <input class="filter__button" type="submit" value="find">
+    </form>
     <table class="filter">
-      <tr>
-        <th class="filter__title">Employee#</th>
-        <th class="filter__title">Name</th>
-        <th class="filter__title">Company</th>
-        <th class="filter__title">Date</th>
-        <th class="filter__title">Check-in</th>
-        <th class="filter__title">Check-out</th>
-      </tr>
-
-      <tr>
-        <th class="filter__data">1</th>
-        <th class="filter__data">Angel Isaac</th>
-        <th class="filter__data">Foo Corp</th>
-        <th class="filter__data">01/18/2022</th>
-        <th class="filter__data">8:00:00 am</th>
-        <th class="filter__data">3:00:00 pm</th>
-      </tr>
-
-      <tr>
-        <th class="filter__data">2</th>
-        <th class="filter__data">Mauricio Navarro</th>
-        <th class="filter__data">Foo Corp</th>
-        <th class="filter__data">01/18/2022</th>
-        <th class="filter__data">8:00:00 am</th>
-        <th class="filter__data">3:00:00 pm</th>
-      </tr>
-
-      <tr>
-        <th class="filter__data">3</th>
-        <th class="filter__data">Derek Ayala</th>
-        <th class="filter__data">Foo Corp</th>
-        <th class="filter__data">01/18/2022</th>
-        <th class="filter__data">8:00:00 am</th>
-        <th class="filter__data">3:00:00 pm</th>
-      </tr>
-
-      <tr>
-        <th class="filter__data">4</th>
-        <th class="filter__data">Ediberto Sanchez Villalobos</th>
-        <th class="filter__data">Foo Corp</th>
-        <th class="filter__data">01/18/2022</th>
-        <th class="filter__data">8:00:00 am</th>
-        <th class="filter__data">3:00:00 pm</th>
-      </tr>
+      <thead>
+        <tr>
+          <th class="filter__title">Private Number</th>
+          <th class="filter__title">Name</th>
+          <th class="filter__title">Company</th>
+          <th class="filter__title">Date</th>
+          <th class="filter__title">Check-in</th>
+          <th class="filter__title">Check-out</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @attendance.each do |attendance| %>
+          <tr>
+            <% employee = Employee.find_by(id: attendance.employee_id)%>
+            <td class="filter__data"><%= employee.private_num%></td>
+            <td class="filter__data"><%= employee.name%></td>
+            <% company = Company.find_by(id: employee.company_id)%>
+            <td class="filter__data"><%= company.name%></td>
+            <td class="filter__data"><%= attendance.attendance_date %></td>
+            <td class="filter__data"><%= attendance.check_in.strftime("%H:%M:%S") %></td>
+            <td class="filter__data"><%= attendance.check_out.strftime("%H:%M:%S") %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 </div>
