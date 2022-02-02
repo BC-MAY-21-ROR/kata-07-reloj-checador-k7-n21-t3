@@ -3,7 +3,6 @@
     <span class="navbar-brand mb-0 h1" id="logo">
         <%= image_tag "foocorp.svg" %>
     </span>
-
     <div class="user_admin">
       <%= image_tag "admin.svg" %>
       <%= link_to  "login", "/users/login" %>
@@ -11,7 +10,9 @@
   </div>
 </nav>
 
+
 <div class="main">
+  <%= render "shared/alerts"%>
   <div class="cont">
     <div class="clock">
       <h1 id="hour"></h1>
@@ -20,17 +21,14 @@
         <h5 id="seconds"></h5>
       </div>
     </div>
-    <form action="">
-      <select name="company" id="company">
-        <option selected>-- Choose company --</option>
-        <option value="foo-corp">Foo Corp</option>
-      </select>
-      <input type="text" placeholder="private code">
+
+    <%= form_with scope: :attendance, url: attendances_path, local:true do |form|%>
+      <%= form.collection_select :company_id, Company.where(disable: false), :id, :name , {}%>
+      <%=form.number_field :private_num, placeholder:"private number"%>
       <div>
-        <input type="button" value="Check In">
-        <input type="button" value="Check Out">
+        <%=form.submit "Check In/Out"%>
       </div>
-    </form>
+    <% end %>
   </div>
 </div>
 
