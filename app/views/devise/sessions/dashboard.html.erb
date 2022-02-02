@@ -1,0 +1,15 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="management-container">
+    <h1>Management</h1>
+    <%= link_to '<input type="button" value="Employees">'.html_safe, employees_path %>
+    <%= link_to '<input type="button" value="Companies branches">'.html_safe, companies_path %>
+  </div>
+  <div class="reports-container">
+    <h1>Reports</h1>
+    <input type="button" value="Attendance by day">
+    <input type="button" value="Average time checked in/out by month">
+    <input type="button" value="Absence report by month">
+  </div>
+</div>

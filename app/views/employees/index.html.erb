@@ -1,15 +1,4 @@
-<nav class="navbar">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1" id="logo">
-      <%= image_tag "foocorp.svg" %>
-    </span>
-
-    <div class="user_admin">
-      <%= image_tag "admin.svg" %>
-      <a href="">Name</a>
-    </div>
-  </div>
-</nav>
+<%= render "shared/header" %>
 
 <div class="main">
   <div class="table">
@@ -43,6 +32,7 @@
     </tbody>
     </table>
     <div class="addButton">
+      <%= link_to '<input class="button" type="button" value="back">'.html_safe, '/user' %>
       <%= link_to '<input class="button" type="button" value="Add">'.html_safe, new_employee_path %>
     </div>
   </div>
