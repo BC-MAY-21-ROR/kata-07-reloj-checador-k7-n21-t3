@@ -10,19 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_28_012113) do
+ActiveRecord::Schema.define(version: 2022_01_29_225619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendances", force: :cascade do |t|
-    t.bigint "employee_id"
     t.date "attendance_date"
     t.time "check_in"
     t.time "check_out"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["employee_id"], name: "index_attendances_on_employee_id"
+    t.integer "private_num"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -44,8 +43,9 @@ ActiveRecord::Schema.define(version: 2022_01_28_012113) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_employees_on_company_id"
+    t.index ["private_num"], name: "index_employees_on_private_num", unique: true
   end
 
-  add_foreign_key "attendances", "employees"
+  add_foreign_key "attendances", "employees", column: "private_num", primary_key: "private_num"
   add_foreign_key "employees", "companies"
 end
