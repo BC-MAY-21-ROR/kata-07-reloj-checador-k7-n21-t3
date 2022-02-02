@@ -17,7 +17,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(params.require(:employee).permit(:name, :email, :position, :employee_num, :private_num, :company_id))
     if @employee.save
-      redirect_to companies_path
+      redirect_to employees_path
     else
       render 'new'
     end
